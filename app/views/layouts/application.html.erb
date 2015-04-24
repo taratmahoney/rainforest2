@@ -18,6 +18,14 @@
   </ul>
 </nav>
 
+<div class="flash">
+<% if flash[:notice] %>
+<p id="notice"> <%= flash[:notice] %> </p>
+<% end %>
+<% if flash[:alert] %>
+<p class="error-messages">  <%= flash[:alert] %> </p>
+<% end %>
+</div>
 
 <%= yield %>
 
