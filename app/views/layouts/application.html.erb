@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<nav class="top-nav">
+
+<h1 class="rainforest"> <%= link_to "RAINFOREST!", root_path %></h1>
+  <ul>
+    <li> <%= link_to "Home", root_path %></li>
+    <li> <%= link_to "Products", products_path %> </li>
+    <li> <%=link_to "+ New product", new_product_path %> </li>
+  </ul>
+</nav>
+
+
 <%= yield %>
 
 </body>

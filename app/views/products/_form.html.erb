@@ -1,0 +1,26 @@
+
+<%= form_for @product do |f| %>
+  <div class ="form">
+    <div class="form-line">
+    <%= f.label :name, :value => "Your product name:" %> 
+    <%= f.text_field :name %>
+    </div>   
+    
+    <div class="form-line">
+    <%= f.label :price_in_cents, :value => "Your product price:" %>
+    <%= f.text_field :price_in_cents %>
+    </div>
+
+    <div class="form-line">
+    <div id="description-label"><%= f.label :description, :value => "Describe your product:" %> </div>
+    <%= f.text_area :description %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+
+    
+
+</div>
+<% end %>

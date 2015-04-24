@@ -1,0 +1,13 @@
+<div class="width-container">
+<p> <%= link_to "<- Back to products page", products_url %></p>
+
+<div class="product-container">
+<h1><%= @product.name %>, $<%= @product.price_in_cents %> </h1>
+<p><strong><%= link_to "EDIT", "products/#{@product.id}/edit" %></strong></p>
+<p> <%= @product.description %> </p>
+
+</div>
+
+</div>
+
+
