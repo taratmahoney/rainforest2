@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'></head>
 <body>
 
 <nav class="top-nav">
@@ -28,6 +28,22 @@
 </div>
 
 <%= yield %>
+<footer>
+
+<div class="user-info">
+<% unless current_page?(controller:"sessions", action:"new") %>
+ <% if current_user %>
+  <p> You are signed in to Rainforest as <%= current_user.first_name %> <%= current_user.last_name %> </p>
+  <p> <%= link_to "Click here to log out", session_path("current"), :method => :delete %></p>
+
+ <% else %>
+
+ <p> <%= link_to "Sign in to Rainforest", new_session_path %> or <%= link_to "Create an account", new_user_path %> </p>
+
+ <% end %>
+<%end%> 
+
+ </footer>
 
 </body>
 </html>

@@ -1,0 +1,9 @@
+  <div class="product-container">
+
+    <h2> <%= link_to product.name, "products/#{product.id}" %>, $<%= product.price_in_cents %></h1>
+
+    <p> <%= product.description %> </p>
+
+    <p><strong><%= link_to "EDIT", "products/#{product.id}/edit" %></strong></p>
+  </div>
+
