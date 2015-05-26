@@ -1,3 +1,5 @@
+
+
 <div class="width-container">
 <p> <%= link_to "<- Back to products page", products_url %></p>
 
@@ -8,6 +10,52 @@
 
 </div>
 
+<div id="review-list">
+    <%= render :partial => "reviews" %>
 </div>
+
+<% if current_user %>
+<h4> Add a review: </h4>
+
+  <%= form_for [@product, @review], :remote => true do |f| %>
+  
+  <div id="review-form-errors">
+    <%= render :partial => '/products/review_form_errors' %>
+  </div>
+
+    <div class ="field">
+
+      <%= f.label :comment %>
+      <%= f.text_area :comment %>
+    </div>
+
+    <div class="actions">
+     <%= f.submit %>
+    </div>
+  <% end %>
+<% else %>
+
+  <p> Please <%= link_to "log in", new_session_path %> to add a review </p>
+  
+<% end %>
+</div>
+
+<script type="text-javascript">
+  $ function() {
+    $("#new_review")
+      .on('ajax:beforeSend', function() {
+        $("input[type='submit']")
+          .val('Saving...')
+            .attr('disabled', 'disabled');
+      })
+
+      .on('ajax:complete', function (){
+        $("input[type='submit']")
+          .val('Create Review')
+          .removeAttr('disabled');
+      });
+  });
+</script>
+
 
 

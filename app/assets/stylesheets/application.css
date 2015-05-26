@@ -154,6 +154,38 @@ img {
   height: 1000px;
 }
 
+.review-form-errors {
+  color: red;
+}
+
+
+#search-form {
+  padding: 1em 0em;
+
+}
+
+input[type="text"]{
+    display: block;
+  width: 80%;
+}
+
+input[type="submit"] {
+  padding: 7px 40px;
+  border: none;
+  color: white;
+  font-weigt: bold;
+  text-transform: uppercase;
+  background-color: #63cf9d;
+  margin-top: 0.5em;
+
+}
+
+
+input[type="submit"]:hover {
+  background-color: #d0f1e1;
+  
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
